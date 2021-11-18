@@ -310,18 +310,12 @@ int main(){
 
 while(1) {
 
-    	//while( get_c() != 'R');
-    	//put_c_int('A');
-	//put_c('A');
-	//put_c_int('B');
 	cmd = get_c();
 	if (cmd == 'P'){
-		get_bytes(16, rxBuffer); // get 16 byte plaintext 
+		get_bytes(16, rxBuffer); 
 		coAES_ecb_enc(keyAES,rxBuffer,output);
 		send_bytes(16,output);
-
-		//for (int i = 0; i < 4; i++){printf("%x", output[i]);}
-		//printf("\n\n");
+		put_c_int('D');
 
 		}
 	}
